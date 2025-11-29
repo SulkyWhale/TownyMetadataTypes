@@ -1,4 +1,5 @@
 # TownyMetadataTypes
+[![](https://jitpack.io/v/sulkywhale/townymetadatatypes.svg)](https://jitpack.io/#sulkywhale/townymetadatatypes)
 
 A library for [Towny](https://github.com/TownyAdvanced/Towny) that provides more advanced data types for Towny object metadata.
 
@@ -27,8 +28,8 @@ If you would like a specific data type to be added, please create an [issue](htt
     ```
     ```xml
     <dependency>
-        <groupId>io.github.sulkywhale.townymetadatatypes</groupId>
-        <artifactId>TownyMetadataTypes</artifactId>
+        <groupId>com.github.sulkywhale</groupId>
+        <artifactId>townymetadatatypes</artifactId>
         <version>1.0.0</version>
     </dependency>
     ```
