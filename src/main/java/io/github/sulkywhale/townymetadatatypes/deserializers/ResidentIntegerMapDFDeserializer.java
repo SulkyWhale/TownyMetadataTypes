@@ -16,9 +16,7 @@ public class ResidentIntegerMapDFDeserializer implements DataFieldDeserializer<R
 
     @Override
     public @Nullable ResidentIntegerMapDataField deserialize(@NotNull String key, @Nullable String value) {
-
         Map<Resident, Integer> residentIntegerMap;
-
         if (value == null) {
             residentIntegerMap = new HashMap<>();
         } else {

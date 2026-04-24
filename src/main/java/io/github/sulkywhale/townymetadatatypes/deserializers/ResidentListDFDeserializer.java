@@ -16,14 +16,10 @@ public class ResidentListDFDeserializer implements DataFieldDeserializer<Residen
 
     @Override
     public @Nullable ResidentListDataField deserialize(@NotNull String key, @Nullable String value) {
-
         List<Resident> residentList;
-
         if (value == null) {
             residentList = new ArrayList<>();
-        }
-
-        else {
+        } else {
             residentList = Arrays.stream(value.split(","))
                     .map(resName -> TownyAPI.getInstance().getResident(resName))
                     .collect(Collectors.toCollection(ArrayList::new));

@@ -14,14 +14,10 @@ public class StringListDFDeserializer implements DataFieldDeserializer<StringLis
 
     @Override
     public @Nullable StringListDataField deserialize(@NotNull String key, @Nullable String value) {
-
         List<String> stringList;
-
         if (value == null) {
             stringList = new ArrayList<>();
-        }
-
-        else {
+        } else {
             stringList = Arrays.stream(value.split(","))
                     .collect(Collectors.toCollection(ArrayList::new));
         }
