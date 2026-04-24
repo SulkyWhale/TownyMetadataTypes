@@ -26,7 +26,7 @@ public class ResidentIntegerMapDFDeserializer implements DataFieldDeserializer<R
                     .map(entry -> entry.split("="))
                     .collect(Collectors.toMap(
                             entry -> TownyAPI.getInstance().getResident(entry[0]),
-                            val -> Integer.parseInt(val[0])
+                            entry -> Integer.parseInt(entry[1])
                     ));
         }
 

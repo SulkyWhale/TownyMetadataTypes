@@ -28,7 +28,7 @@ public class ResidentBooleanMapDFDeserializer implements DataFieldDeserializer<R
                     .map(entry -> entry.split("="))
                     .collect(Collectors.toMap(
                             entry -> TownyAPI.getInstance().getResident(entry[0]),
-                            val -> Boolean.parseBoolean(val[0])
+                            entry -> Boolean.parseBoolean(entry[1])
                     ));
         }
 

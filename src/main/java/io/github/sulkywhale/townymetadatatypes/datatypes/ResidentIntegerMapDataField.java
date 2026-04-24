@@ -41,7 +41,7 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
                 .map(entry -> entry.split(":"))
                 .collect(Collectors.toMap(
                         entry -> TownyAPI.getInstance().getResident(entry[0]),
-                        value -> Integer.parseInt(value[1])
+                        entry -> Integer.parseInt(entry[1])
                 ));
 
         this.setValue(residentIntegerMap);

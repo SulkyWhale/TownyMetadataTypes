@@ -41,7 +41,7 @@ public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, B
                 .map(entry -> entry.split(":"))
                 .collect(Collectors.toMap(
                         entry -> TownyAPI.getInstance().getResident(entry[0]),
-                        value -> Boolean.parseBoolean(value[1])
+                        entry -> Boolean.parseBoolean(entry[1])
                 ));
 
         this.setValue(residentBooleanMapMap);
