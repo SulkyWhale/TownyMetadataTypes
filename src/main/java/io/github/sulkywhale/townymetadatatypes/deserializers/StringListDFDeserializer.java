@@ -2,6 +2,7 @@ package io.github.sulkywhale.townymetadatatypes.deserializers;
 
 import com.palmergames.bukkit.towny.object.metadata.DataFieldDeserializer;
 import io.github.sulkywhale.townymetadatatypes.datatypes.StringListDataField;
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 public class StringListDFDeserializer implements DataFieldDeserializer<StringListDataField> {
 
     @Override
+    @ApiStatus.Internal
     public @Nullable StringListDataField deserialize(@NotNull String key, @Nullable String value) {
         List<String> stringList;
         if (value == null) {

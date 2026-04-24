@@ -4,6 +4,7 @@ import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.metadata.DataFieldDeserializer;
 import io.github.sulkywhale.townymetadatatypes.datatypes.ResidentBooleanMapDataField;
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 public class ResidentBooleanMapDFDeserializer implements DataFieldDeserializer<ResidentBooleanMapDataField> {
 
     @Override
+    @ApiStatus.Internal
     public @Nullable ResidentBooleanMapDataField deserialize(@NotNull String key, @Nullable String value) {
 
         Map<Resident, Boolean> residentBooleanMap;
