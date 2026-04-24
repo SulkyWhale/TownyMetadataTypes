@@ -12,7 +12,7 @@ This library currently comes with the following data types:
 - `ResidentListDataField` - A list of residents.
 - `StringListDataField` - A list of strings.
 
-If you would like a specific data type to be added, please create an [issue](https://github.com/SulkyWhale/TownyMetadataTypes/issues/new) for it.
+If you would like a specific data type to be added, please create an [Ideas' discussion](https://github.com/SulkyWhale/TownyMetadataTypes/discussions/new?category=ideas) for it.
 
 ## Usage
 
