@@ -40,6 +40,7 @@ public class StringListDataField extends CustomDataField<List<String>> {
         this.setValue(stringList);
     }
 
+    @Override
     public String displayFormattedValue() {
         final List<String> stringList = this.getValue();
         if (stringList == null || stringList.isEmpty())

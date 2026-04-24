@@ -44,6 +44,7 @@ public class ResidentListDataField extends CustomDataField<List<Resident>> {
         this.setValue(residentList);
     }
 
+    @Override
     public String displayFormattedValue() {
         final List<Resident> residentListList = this.getValue();
         if (residentListList == null || residentListList.isEmpty())

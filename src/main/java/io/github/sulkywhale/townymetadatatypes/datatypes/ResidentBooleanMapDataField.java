@@ -47,6 +47,7 @@ public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, B
         this.setValue(residentBooleanMapMap);
     }
 
+    @Override
     public String displayFormattedValue() {
         final Map<Resident, Boolean> residentBooleanMap = this.getValue();
         if (residentBooleanMap == null || residentBooleanMap.isEmpty())

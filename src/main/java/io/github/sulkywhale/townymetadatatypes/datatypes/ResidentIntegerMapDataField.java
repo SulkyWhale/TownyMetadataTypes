@@ -47,6 +47,7 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
         this.setValue(residentIntegerMap);
     }
 
+    @Override
     public String displayFormattedValue() {
         final Map<Resident, Integer> residentIntegerMap = this.getValue();
         if (residentIntegerMap == null || residentIntegerMap.isEmpty())
