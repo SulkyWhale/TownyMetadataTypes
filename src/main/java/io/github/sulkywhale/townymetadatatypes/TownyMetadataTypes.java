@@ -10,7 +10,6 @@ import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentBooleanMapD
 import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentIntegerMapDFDeserializer;
 import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentListDFDeserializer;
 import io.github.sulkywhale.townymetadatatypes.deserializers.StringListDFDeserializer;
-import org.bukkit.Bukkit;
 
 import java.util.HashMap;
 import java.util.Map;
