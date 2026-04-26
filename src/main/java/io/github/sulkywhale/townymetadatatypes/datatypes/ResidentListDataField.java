@@ -63,7 +63,7 @@ public class ResidentListDataField extends CustomDataField<List<Resident>> {
             return null;
 
         return residentList.stream()
-                .map(TownyObject::getName)
+                .map(res -> res.getUUID().toString())
                 .collect(Collectors.joining(","));
     }
 

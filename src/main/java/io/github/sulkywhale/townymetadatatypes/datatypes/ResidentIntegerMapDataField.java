@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, Integer>> {
@@ -38,7 +37,7 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
         final String[] pairStrSplit = strValue.split(",");
 
         final Map<Resident, Integer> residentIntegerMap = Arrays.stream(pairStrSplit)
-                .map(entry -> entry.split(":"))
+                .map(entry -> entry.split("="))
                 .collect(Collectors.toMap(
                         entry -> TownyAPI.getInstance().getResident(entry[0]),
                         entry -> Integer.parseInt(entry[1])
@@ -66,7 +65,7 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
             return null;
 
         return residentIntegerMap.entrySet().stream()
-                .map(Objects::toString)
+                .map(entry -> entry.getKey().getUUID() + "=" + entry.getValue())
                 .collect(Collectors.joining(","));
     }
 

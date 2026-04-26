@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ResidentBooleanMapDFDeserializer implements DataFieldDeserializer<ResidentBooleanMapDataField> {
@@ -27,7 +28,7 @@ public class ResidentBooleanMapDFDeserializer implements DataFieldDeserializer<R
             residentBooleanMap = Arrays.stream(value.split(","))
                     .map(entry -> entry.split("="))
                     .collect(Collectors.toMap(
-                            entry -> TownyAPI.getInstance().getResident(entry[0]),
+                            entry -> TownyAPI.getInstance().getResident(UUID.fromString(entry[0])),
                             entry -> Boolean.parseBoolean(entry[1])
                     ));
         }

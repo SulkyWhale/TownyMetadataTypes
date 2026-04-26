@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class ResidentListDFDeserializer implements DataFieldDeserializer<ResidentListDataField> {
@@ -23,7 +24,7 @@ public class ResidentListDFDeserializer implements DataFieldDeserializer<Residen
             residentList = new ArrayList<>();
         } else {
             residentList = Arrays.stream(value.split(","))
-                    .map(resName -> TownyAPI.getInstance().getResident(resName))
+                    .map(resUuid -> TownyAPI.getInstance().getResident(UUID.fromString(resUuid)))
                     .collect(Collectors.toCollection(ArrayList::new));
         }
 

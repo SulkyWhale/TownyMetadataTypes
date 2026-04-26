@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, Boolean>> {
@@ -66,7 +65,7 @@ public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, B
             return null;
 
         return residentBooleanMap.entrySet().stream()
-                .map(Objects::toString)
+                .map(entry -> entry.getKey().getUUID() + "=" + entry.getValue())
                 .collect(Collectors.joining(","));
     }
 
