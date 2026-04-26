@@ -30,7 +30,7 @@ If you would like a specific data type to be added, please create an [Ideas' dis
     <dependency>
         <groupId>com.github.sulkywhale</groupId>
         <artifactId>townymetadatatypes</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </dependency>
     ```
     
