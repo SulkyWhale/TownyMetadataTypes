@@ -7,11 +7,13 @@ import io.github.sulkywhale.townymetadatatypes.datatypes.ResidentDecimalMapDataF
 import io.github.sulkywhale.townymetadatatypes.datatypes.ResidentIntegerMapDataField;
 import io.github.sulkywhale.townymetadatatypes.datatypes.ResidentListDataField;
 import io.github.sulkywhale.townymetadatatypes.datatypes.StringListDataField;
+import io.github.sulkywhale.townymetadatatypes.datatypes.TownBlockListDataField;
 import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentBooleanMapDFDeserializer;
 import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentDecimalMapDFDeserializer;
 import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentIntegerMapDFDeserializer;
 import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentListDFDeserializer;
 import io.github.sulkywhale.townymetadatatypes.deserializers.StringListDFDeserializer;
+import io.github.sulkywhale.townymetadatatypes.deserializers.TownBlockListDFDeserializer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +30,7 @@ public class TownyMetadataTypes {
         deserializerMap.put(ResidentDecimalMapDataField.typeID(), new ResidentDecimalMapDFDeserializer());
         deserializerMap.put(ResidentListDataField.typeID(), new ResidentListDFDeserializer());
         deserializerMap.put(StringListDataField.typeID(), new StringListDFDeserializer());
+        deserializerMap.put(TownBlockListDataField.typeID(), new TownBlockListDFDeserializer());
     }
 
     public static TownyMetadataTypes getInstance() {
