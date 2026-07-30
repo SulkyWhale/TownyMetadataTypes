@@ -32,11 +32,8 @@ public class StringListDataField extends CustomDataField<List<String>> {
 
     @Override
     public void setValueFromString(String strValue) {
-
         final String[] stringStrSplit = strValue.split(",");
-
         final List<String> stringList = Arrays.asList(stringStrSplit);
-
         this.setValue(stringList);
     }
 
@@ -54,7 +51,6 @@ public class StringListDataField extends CustomDataField<List<String>> {
     @Override
     protected @Nullable String serializeValueToString() {
         List<String> stringList = this.getValue();
-
         if (stringList == null || stringList.isEmpty())
             return null;
 
@@ -65,15 +61,12 @@ public class StringListDataField extends CustomDataField<List<String>> {
 
     @Override
     public @NotNull CustomDataField<List<String>> clone() {
-
         final List<String> stringList = this.getValue();
         List<String> copyList = null;
-
         if (stringList != null)
             copyList = new ArrayList<>(stringList);
 
         final String copyLabel = hasLabel() ? getLabel() : null;
-
         return new StringListDataField(this.getKey(), copyList, copyLabel);
     }
 }

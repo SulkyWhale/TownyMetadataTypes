@@ -33,9 +33,7 @@ public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, B
 
     @Override
     public void setValueFromString(String strValue) {
-
         final String[] pairStrSplit = strValue.split(",");
-
         final Map<Resident, Boolean> residentBooleanMapMap = Arrays.stream(pairStrSplit)
                 .map(entry -> entry.split(":"))
                 .collect(Collectors.toMap(
@@ -60,7 +58,6 @@ public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, B
     @Override
     protected @Nullable String serializeValueToString() {
         Map<Resident, Boolean> residentBooleanMap = this.getValue();
-
         if (residentBooleanMap == null || residentBooleanMap.isEmpty())
             return null;
 
@@ -71,15 +68,12 @@ public class ResidentBooleanMapDataField extends CustomDataField<Map<Resident, B
 
     @Override
     public @NotNull CustomDataField<Map<Resident, Boolean>> clone() {
-
         final Map<Resident, Boolean> residentBooleanMap = this.getValue();
         Map<Resident, Boolean> copyList = null;
-
         if (residentBooleanMap != null)
             copyList = new HashMap<>(residentBooleanMap);
 
         final String copyLabel = hasLabel() ? getLabel() : null;
-
         return new ResidentBooleanMapDataField(this.getKey(), copyList, copyLabel);
     }
 }

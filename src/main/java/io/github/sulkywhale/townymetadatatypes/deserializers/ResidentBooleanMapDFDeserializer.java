@@ -19,9 +19,7 @@ public class ResidentBooleanMapDFDeserializer implements DataFieldDeserializer<R
     @Override
     @ApiStatus.Internal
     public @Nullable ResidentBooleanMapDataField deserialize(@NotNull String key, @Nullable String value) {
-
         Map<Resident, Boolean> residentBooleanMap;
-
         if (value == null) {
             residentBooleanMap = new HashMap<>();
         } else {

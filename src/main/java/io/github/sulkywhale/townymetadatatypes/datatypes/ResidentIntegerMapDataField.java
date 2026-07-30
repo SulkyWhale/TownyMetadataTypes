@@ -33,9 +33,7 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
 
     @Override
     public void setValueFromString(String strValue) {
-
         final String[] pairStrSplit = strValue.split(",");
-
         final Map<Resident, Integer> residentIntegerMap = Arrays.stream(pairStrSplit)
                 .map(entry -> entry.split("="))
                 .collect(Collectors.toMap(
@@ -60,7 +58,6 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
     @Override
     protected @Nullable String serializeValueToString() {
         Map<Resident, Integer> residentIntegerMap = this.getValue();
-
         if (residentIntegerMap == null || residentIntegerMap.isEmpty())
             return null;
 
@@ -71,15 +68,12 @@ public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, I
 
     @Override
     public @NotNull CustomDataField<Map<Resident, Integer>> clone() {
-
         final Map<Resident, Integer> residentIntegerMap = this.getValue();
         Map<Resident, Integer> copyList = null;
-
         if (residentIntegerMap != null)
             copyList = new HashMap<>(residentIntegerMap);
 
         final String copyLabel = hasLabel() ? getLabel() : null;
-
         return new ResidentIntegerMapDataField(this.getKey(), copyList, copyLabel);
     }
 }

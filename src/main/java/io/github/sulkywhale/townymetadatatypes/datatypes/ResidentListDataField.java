@@ -34,9 +34,7 @@ public class ResidentListDataField extends CustomDataField<List<Resident>> {
 
     @Override
     public void setValueFromString(String strValue) {
-
         final String[] residentStrSplit = strValue.split(",");
-
         final List<Resident> residentList = Arrays.stream(residentStrSplit)
                 .map(resName -> TownyAPI.getInstance().getResident(resName))
                 .collect(Collectors.toList());
@@ -46,11 +44,11 @@ public class ResidentListDataField extends CustomDataField<List<Resident>> {
 
     @Override
     public String displayFormattedValue() {
-        final List<Resident> residentListList = this.getValue();
-        if (residentListList == null || residentListList.isEmpty())
+        final List<Resident> residentList = this.getValue();
+        if (residentList == null || residentList.isEmpty())
             return "<Empty>";
 
-        return residentListList.stream()
+        return residentList.stream()
                 .map(TownyObject::getName)
                 .collect(Collectors.joining(", "));
     }
@@ -58,7 +56,6 @@ public class ResidentListDataField extends CustomDataField<List<Resident>> {
     @Override
     protected @Nullable String serializeValueToString() {
         List<Resident> residentList = this.getValue();
-
         if (residentList == null || residentList.isEmpty())
             return null;
 
@@ -69,15 +66,12 @@ public class ResidentListDataField extends CustomDataField<List<Resident>> {
 
     @Override
     public @NotNull CustomDataField<List<Resident>> clone() {
-
         final List<Resident> residentList = this.getValue();
         List<Resident> copyList = null;
-
         if (residentList != null)
             copyList = new ArrayList<>(residentList);
 
         final String copyLabel = hasLabel() ? getLabel() : null;
-
         return new ResidentListDataField(this.getKey(), copyList, copyLabel);
     }
 }
