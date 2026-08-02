@@ -8,6 +8,7 @@ A library for [Towny](https://github.com/TownyAdvanced/Towny) that provides more
 This library currently comes with the following data types:
 
 - `ResidentBooleanMapDataField` - A map with a resident key and a boolean value.
+- `ResidentDataField.java` - A resident.
 - `ResidentIntegerMapDataField` - A map with a resident key and an integer value.
 - `ResidentDecimalMapDataField` - A map with a resident key and a decimal value.
 - `ResidentListDataField` - A list of residents.
@@ -32,7 +33,7 @@ If you would like a specific data type to be added, please create an [Ideas' dis
     <dependency>
         <groupId>com.github.sulkywhale</groupId>
         <artifactId>townymetadatatypes</artifactId>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
     </dependency>
     ```
     
