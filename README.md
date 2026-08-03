@@ -7,6 +7,7 @@ A library for [Towny](https://github.com/TownyAdvanced/Towny) that provides more
 
 This library currently comes with the following data types:
 
+- `MoneyDataField` - An extension to the `DecimalDataField` within Towny, with values formatted for money.
 - `ResidentBooleanMapDataField` - A map with a resident key and a boolean value.
 - `ResidentDataField.java` - A resident.
 - `ResidentIntegerMapDataField` - A map with a resident key and an integer value.
