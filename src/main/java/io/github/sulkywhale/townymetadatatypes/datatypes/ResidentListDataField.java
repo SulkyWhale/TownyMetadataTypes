@@ -4,6 +4,8 @@ import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.TownyObject;
 import com.palmergames.bukkit.towny.object.metadata.CustomDataField;
+import io.github.sulkywhale.townymetadatatypes.DeserializableCustomDataField;
+import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentListDFDeserializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,6 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@DeserializableCustomDataField(ResidentListDFDeserializer.class)
 public class ResidentListDataField extends CustomDataField<List<Resident>> {
 
     public ResidentListDataField(String key, List<Resident> value, String label) {

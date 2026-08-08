@@ -3,6 +3,8 @@ package io.github.sulkywhale.townymetadatatypes.datatypes;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.metadata.CustomDataField;
+import io.github.sulkywhale.townymetadatatypes.DeserializableCustomDataField;
+import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentIntegerMapDFDeserializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,6 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@DeserializableCustomDataField(ResidentIntegerMapDFDeserializer.class)
 public class ResidentIntegerMapDataField extends CustomDataField<Map<Resident, Integer>> {
 
     public ResidentIntegerMapDataField(String key, Map<Resident, Integer> value, String label) {

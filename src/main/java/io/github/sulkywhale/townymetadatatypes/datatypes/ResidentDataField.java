@@ -3,9 +3,12 @@ package io.github.sulkywhale.townymetadatatypes.datatypes;
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.Resident;
 import com.palmergames.bukkit.towny.object.metadata.CustomDataField;
+import io.github.sulkywhale.townymetadatatypes.DeserializableCustomDataField;
+import io.github.sulkywhale.townymetadatatypes.deserializers.ResidentDFDeserializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@DeserializableCustomDataField(ResidentDFDeserializer.class)
 public class ResidentDataField extends CustomDataField<Resident> {
 
     public ResidentDataField(String key, Resident value, String label) {

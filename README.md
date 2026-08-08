@@ -5,7 +5,7 @@ A library for [Towny](https://github.com/TownyAdvanced/Towny) that provides more
 
 ## Data Types
 
-This library currently comes with the following data types:
+This library currently comes with the following custom metadata types:
 
 - `MoneyDataField` - An extension to the `DecimalDataField` within Towny, with values formatted for money.
 - `ResidentBooleanMapDataField` - A map with a resident key and a boolean value.
@@ -34,7 +34,7 @@ If you would like a specific data type to be added, please create an [Ideas' dis
     <dependency>
         <groupId>com.github.sulkywhale</groupId>
         <artifactId>townymetadatatypes</artifactId>
-        <version>1.1.2</version>
+        <version>2.0.0</version>
     </dependency>
     ```
     
@@ -45,7 +45,7 @@ If you would like a specific data type to be added, please create an [Ideas' dis
    <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-shade-plugin</artifactId>
-      <version>3.6.1</version>
+      <version>3.6.2</version>
       <configuration>
           <relocations>
               <relocation>
@@ -70,10 +70,8 @@ If you would like a specific data type to be added, please create an [Ideas' dis
     ```java
      @Override
      public void onEnable() {
-         TownyMetadataTypes townyMetadataTypes = TownyMetadataTypes.getInstance();
- 
-         townyMetadataTypes.registerDeserializer(StringListDataField.typeID());
-         townyMetadataTypes.registerDeserializer(ResidentIntegerMapDataField.typeID());
+         TownyMetadataTypes.registerDataField(StringListDataField.class);
+         TownyMetadataTypes.registerDataField(ResidentIntegerMapDataField.class);
      }
     ```
 
@@ -84,21 +82,22 @@ You can now use these metadata types as you would use any built-in metadata type
 Save metadata:
 
 ```java
-StringListDataField sldf = new StringListDataField("myplugin_list", Arrays.asList("Tree", "Grass", "Dirt"));
-
-town.addMetaData(sldf);
-// Same for the rest of the Towny objects
+public void saveStringList(Town town) {
+    StringListDataField sldf = new StringListDataField("myplugin_list", Arrays.asList("Tree", "Grass", "Dirt"));
+    town.addMetaData(sldf);
+    // Same for the rest of the Towny objects and custom metadata types
+}
 ```
 
 Load metadata:
 
 ```java
-if (town.hasMeta("myplugin_list")) {
-    CustomDataField<?> cdf = town.getMetadata("myplugin_list");
-    if (cdf instanceof StringListDataField sldf) {
-        List<String> list = sldf.getValue();
-    }
-    // Use object value
+public void useStringList(Town town) {
+   if (town.hasMeta("myplugin_list")) {
+       List<String> list = town.getMetadata("myplugin_list", StringListDataField.class).getValue();
+       // Use object value
+   }
+   // Same for the rest of the Towny objects and custom metadata types
 }
 ```
 

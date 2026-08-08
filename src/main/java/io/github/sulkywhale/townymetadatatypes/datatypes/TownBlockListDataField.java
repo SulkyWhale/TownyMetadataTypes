@@ -4,6 +4,8 @@ import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.object.TownBlock;
 import com.palmergames.bukkit.towny.object.WorldCoord;
 import com.palmergames.bukkit.towny.object.metadata.CustomDataField;
+import io.github.sulkywhale.townymetadatatypes.DeserializableCustomDataField;
+import io.github.sulkywhale.townymetadatatypes.deserializers.TownBlockListDFDeserializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -12,6 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@DeserializableCustomDataField(TownBlockListDFDeserializer.class)
 public class TownBlockListDataField extends CustomDataField<List<TownBlock>> {
 
     public TownBlockListDataField(String key, List<TownBlock> value, String label) {

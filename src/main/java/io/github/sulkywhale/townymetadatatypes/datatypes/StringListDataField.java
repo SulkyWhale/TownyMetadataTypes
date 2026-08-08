@@ -1,6 +1,8 @@
 package io.github.sulkywhale.townymetadatatypes.datatypes;
 
 import com.palmergames.bukkit.towny.object.metadata.CustomDataField;
+import io.github.sulkywhale.townymetadatatypes.DeserializableCustomDataField;
+import io.github.sulkywhale.townymetadatatypes.deserializers.StringListDFDeserializer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@DeserializableCustomDataField(StringListDFDeserializer.class)
 public class StringListDataField extends CustomDataField<List<String>> {
 
     public StringListDataField(String key, List<String> value, String label) {
