@@ -1,5 +1,6 @@
 # TownyMetadataTypes
 [![](https://jitpack.io/v/sulkywhale/townymetadatatypes.svg)](https://jitpack.io/#sulkywhale/townymetadatatypes)
+[![Javadoc](https://shields.io/badge/Javadoc-blue)](https://javadoc.jitpack.io/com/github/sulkywhale/townymetadatatypes/latest/javadoc/)
 
 A library for [Towny](https://github.com/TownyAdvanced/Towny) that provides more advanced data types for Towny object metadata.
 
