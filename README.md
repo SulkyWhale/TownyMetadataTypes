@@ -48,6 +48,7 @@ If you would like a specific data type to be added, please create an [Ideas' dis
       <artifactId>maven-shade-plugin</artifactId>
       <version>3.6.2</version>
       <configuration>
+          <minimizeJar>true</minimizeJar> <!-- This line is optional. It will remove unused classes, which may break other libraries -->
           <relocations>
               <relocation>
                   <pattern>io.github.sulkywhale.townymetadatatypes</pattern>
@@ -102,7 +103,7 @@ public void useStringList(Town town) {
 }
 ```
 
-Please note that these data types will not be available until after the server has loaded, because Towny deserializes all metadata on the first tick of the server.
+Please note that these data types will not be available until after the server has loaded, because Towny deserializes all metadata on the first tick of the server. If your plugin relies on metadata, using these data types, to load, listen to the [LoadedMetadataEvent](https://townyadvanced.github.io/Towny/javadoc/release/com/palmergames/bukkit/towny/event/LoadedMetadataEvent.html) event and run your logic in the listener.
 
 If you are not familiar with how Towny metadata works, visit the [Towny wiki](https://github.com/TownyAdvanced/Towny/wiki/Configuring-Metadata-in-Towny-objects.) to learn more.
 
