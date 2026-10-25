@@ -19,7 +19,7 @@ This library currently comes with the following custom metadata types:
 
 If you would like a specific data type to be added, please create an [Ideas' discussion](https://github.com/SulkyWhale/TownyMetadataTypes/discussions/new?category=ideas) for it.
 
-## Usage
+## Getting Started
 
 1. Add the project as a dependency to Maven in your pom.xml:
     
@@ -79,7 +79,7 @@ If you would like a specific data type to be added, please create an [Ideas' dis
 
 You can now use these metadata types as you would use any built-in metadata types in Towny.
 
-### Examples
+### Usage Examples
 
 Save metadata:
 
